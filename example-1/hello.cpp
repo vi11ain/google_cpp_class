@@ -10,8 +10,9 @@ int main()
   for (int i = 0; i < 6; ++i)
   {
     for (int j = 0; j < 4; ++j)
+      // set stream alignment to left
       // set width of 17 spaces, the minimum number of characters that will be written, filled by spaces for blanks
-      cout << setw(17) << "Hello World!";
+      cout << left << setw(17) << "Hello World!";
     // write a newline as part of outer loop
     cout << endl;
   }
