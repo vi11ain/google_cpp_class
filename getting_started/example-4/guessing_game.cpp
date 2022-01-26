@@ -21,26 +21,33 @@ int main()
 
     cout << "A secret number between 1 and 100 was chosen..." << endl;
 
-    cout << "Enter your guess: ";
-    if (!(cin >> guess))
+    do
     {
-        cout << "Invalid input!" << endl;
-    }
-    else
-    {
-        if (guess < secret)
+        cout << "Enter your guess: ";
+        if (!(cin >> guess))
         {
-            cout << "Secret is bigger than " << guess << endl;
-        }
-        else if (guess > secret)
-        {
-            cout << "Secret is smaller than " << guess << endl;
+            cout << "Invalid input!" << endl;
+
+            // reset input stream and skip to next loop iteration
+            cin.clear();
+            cin.ignore(1024, '\n');
+            continue;
         }
         else
         {
-            cout << "Congratz! You guessed correctly!" << endl;
+            if (guess < secret)
+            {
+                cout << "Secret is bigger than " << guess << endl;
+            }
+            else if (guess > secret)
+            {
+                cout << "Secret is smaller than " << guess << endl;
+            }
         }
-    }
+        // continue iterations till guess is correct
+    } while (guess != secret);
+
+    cout << "Congratz! You guessed correctly!" << endl;
 
     return 0;
 }
