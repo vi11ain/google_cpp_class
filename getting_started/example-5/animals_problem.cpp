@@ -7,15 +7,15 @@
 
 using namespace std;
 
+// Constants
+#define kCostHorse 10
+#define kCostPig 3
+#define kCostRabbit 0.5
+#define kTotalCount 100
+#define kTotalCost 100
+
 int main()
 {
-    const float kCostHorse = 10;
-    const float kCostPig = 3;
-    const float kCostRabbit = 0.5;
-
-    const int kTotalCount = 100;
-    const float kTotalCost = 100;
-
     for (int i = 0; i <= kTotalCount; ++i)
     {
         for (int j = 0; j <= kTotalCount; ++j)
